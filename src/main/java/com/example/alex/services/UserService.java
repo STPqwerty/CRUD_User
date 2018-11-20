@@ -22,4 +22,8 @@ public class UserService {
         }
         return users;
     }
+
+    public void delete(long id){
+        userRepo.deleteById(id);
+    }
 }

@@ -6,11 +6,11 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="user")
-public class User implements Serializable {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
 
     @Column(name = "first_name", nullable = false)
     private String first_name;
@@ -27,20 +27,28 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
 
-//    @OneToOne(optional = false)
+    public int getAddress_id() {
+        return address_id;
+    }
+
+    public void setAddress_id(int address_id) {
+        this.address_id = address_id;
+    }
+
+    //    @OneToOne(optional = false)
 //    @JoinColumn(name = "address_id")
-    @Column
-    private Integer address_id;
+    @Column(name = "address_id")
+    private int address_id;
 //    private Adress adress;
 
     @Column(name = "birth_year")
     private String birth_year;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -82,14 +90,6 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Integer getAddress_id() {
-        return address_id;
-    }
-
-    public void setAddress_id(Integer address_id) {
-        this.address_id = address_id;
     }
 
     public String getBirth_year() {
