@@ -14,7 +14,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">WebSiteName</a>
+            <a class="navbar-brand" href="#">Users.com</a>
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">All Users</a></li>
@@ -45,12 +45,12 @@
                     <c:forEach var="user" items="${users}"  >
                         <tr>
                             <td>${user.id}</td>
-                            <td>${user.first_name}</td>
-                            <td>${user.last_name}</td>
-                            <td>${user.middle_name}</td>
+                            <td>${user.firstName}</td>
+                            <td>${user.lastName}</td>
+                            <td>${user.middleName}</td>
                             <td>${user.phone}</td>
                             <td>${user.email}</td>
-                            <td>${user.birth_year}</td>
+                            <td>${user.birthYear}</td>
                             <td><a href="updateUser?id=${user.id}"><div class="glyphicon glyphicon-pencil"></div></a> </td>
                             <td><a href="deleteUser?id=${user.id}"><div class="glyphicon glyphicon-trash"></div></a> </td>
                         </tr>

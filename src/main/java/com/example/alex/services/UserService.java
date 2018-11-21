@@ -15,6 +15,7 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
+//список пользователей
     public Collection<User> findAllUsers(){
         List<User> users = new ArrayList<>();
         for (User user : userRepo.findAll()){
@@ -23,13 +24,16 @@ public class UserService {
         return users;
     }
 
+//метод удаления пользователя по id
     public void delete(long id){
         userRepo.deleteById(id);
     }
 
+//метод редактирования пользователя
     public User findOne(long id){
         return userRepo.findById(id);
     }
+
 
     public void save(User user){
         userRepo.save(user);

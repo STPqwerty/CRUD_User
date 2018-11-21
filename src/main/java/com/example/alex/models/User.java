@@ -12,14 +12,14 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "first_name", nullable = false)
-    private String first_name;
+    @Column(name = "firstName", nullable = false)
+    private String firstName;
 
-    @Column(name = "last_name", nullable = false)
-    private String last_name;
+    @Column(name = "lastName", nullable = false)
+    private String lastName;
 
-    @Column(name = "middle_name", nullable = false)
-    private String middle_name;
+    @Column(name = "middleName", nullable = false)
+    private String middleName;
 
     @Column(name = "phone_num")
     private String phone;
@@ -27,22 +27,22 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
 
-    public int getAddress_id() {
-        return address_id;
+    public int getAddressId() {
+        return addressId;
     }
 
-    public void setAddress_id(int address_id) {
-        this.address_id = address_id;
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
     }
 
     //    @OneToOne(optional = false)
-//    @JoinColumn(name = "address_id")
-    @Column(name = "address_id")
-    private int address_id;
+//    @JoinColumn(name = "addressId")
+    @Column(name = "addressId")
+    private int addressId;
 //    private Adress adress;
 
-    @Column(name = "birth_year")
-    private String birth_year;
+    @Column(name = "birthYear")
+    private String birthYear;
 
     public long getId() {
         return id;
@@ -52,28 +52,28 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getMiddle_name() {
-        return middle_name;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    public void setMiddle_name(String middle_name) {
-        this.middle_name = middle_name;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
     public String getPhone() {
@@ -92,11 +92,11 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getBirth_year() {
-        return birth_year;
+    public String getBirthYear() {
+        return birthYear;
     }
 
-    public void setBirth_year(String birth_year) {
-        this.birth_year = birth_year;
+    public void setBirthYear(String birthYear) {
+        this.birthYear = birthYear;
     }
 }
