@@ -15,11 +15,6 @@ public class MainRestController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(value = "/")
-    public String hello(){
-        return "Hello Alex";
-    }
-
     @GetMapping("/findAllUsers")
     public Collection<User> getAllUsers(){
         return userService.findAllUsers();
