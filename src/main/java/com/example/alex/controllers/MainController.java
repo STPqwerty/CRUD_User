@@ -44,4 +44,10 @@ public class MainController {
         request.setAttribute("user", new User());
         return "edit";
     }
+
+    @GetMapping("/deleteUser")
+    public void deleteUser(@RequestParam long id, HttpServletRequest request, HttpServletResponse response) throws IOException{
+        userService.delete(id);
+        response.sendRedirect("/");
+    }
 }

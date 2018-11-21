@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Users</title>
-    <meta charset="utf-8">
+    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -37,6 +37,7 @@
                         <th>Email</th>
                         <th>Birth Year</th>
                         <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,6 +52,7 @@
                             <td>${user.email}</td>
                             <td>${user.birth_year}</td>
                             <td><a href="updateUser?id=${user.id}"><div class="glyphicon glyphicon-pencil"></div></a> </td>
+                            <td><a href="deleteUser?id=${user.id}"><div class="glyphicon glyphicon-trash"></div></a> </td>
                         </tr>
                     </c:forEach>
                 </tbody>

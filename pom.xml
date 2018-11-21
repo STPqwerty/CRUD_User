@@ -42,9 +42,9 @@
 
 
         <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-            <!--<scope>runtime</scope>-->
+        <!--<groupId>mysql</groupId>-->
+        <!--<artifactId>mysql-connector-java</artifactId>-->
+        <!--<scope>runtime</scope>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -71,9 +71,9 @@
         </dependency>
         <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jdbc &ndash;&gt;-->
         <!--<dependency>-->
-            <!--<groupId>org.apache.tomcat</groupId>-->
-            <!--<artifactId>tomcat-jdbc</artifactId>-->
-            <!--<version>9.0.12</version>-->
+        <!--<groupId>org.apache.tomcat</groupId>-->
+        <!--<artifactId>tomcat-jdbc</artifactId>-->
+        <!--<version>9.0.12</version>-->
         <!--</dependency>-->
     </dependencies>
 
@@ -82,6 +82,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
             </plugin>
         </plugins>
     </build>
