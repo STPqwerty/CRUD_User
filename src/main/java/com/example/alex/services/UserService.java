@@ -26,4 +26,12 @@ public class UserService {
     public void delete(long id){
         userRepo.deleteById(id);
     }
+
+    public User findOne(long id){
+        return userRepo.findById(id);
+    }
+
+    public void save(User user){
+        userRepo.save(user);
+    }
 }

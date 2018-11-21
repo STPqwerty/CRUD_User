@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html lang="en">
+<html>
 <head>
     <title>Users</title>
     <meta charset="utf-8">
@@ -24,32 +24,39 @@
 </nav>
 
 <div class="container">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Middle Name</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>Birth Year</th>
-        </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="user" items="${users}">
-                <tr>
-                    <td>${user.id}</td>
-                    <td>${user.first_name}</td>
-                    <td>${user.last_name}</td>
-                    <td>${user.middle_name}</td>
-                    <td>${user.phone}</td>
-                    <td>${user.email}</td>
-                    <td>${user.birth_year}</td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+    <c:choose>
+        <c:when test="${mode == 'USER_VIEW'}">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Middle Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Birth Year</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <c:forEach var="user" items="${users}"  >
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>${user.first_name}</td>
+                            <td>${user.last_name}</td>
+                            <td>${user.middle_name}</td>
+                            <td>${user.phone}</td>
+                            <td>${user.email}</td>
+                            <td>${user.birth_year}</td>
+                            <td><a href="updateUser?id=${user.id}"><div class="glyphicon glyphicon-pencil"></div></a> </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </c:when>
+    </c:choose>
 </div>
 
 </body>

@@ -5,7 +5,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>alex</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.5.2.RELEASE</version>
     <packaging>jar</packaging>
 
     <name>alex</name>
