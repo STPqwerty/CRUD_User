@@ -18,7 +18,7 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">All Users</a></li>
-            <li><a href="#">New user</a></li>
+            <li><a href="newUser">New user</a></li>
         </ul>
     </div>
 </nav>

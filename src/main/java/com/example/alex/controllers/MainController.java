@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Controller
 public class MainController {
@@ -30,10 +32,16 @@ public class MainController {
     }
 
     @GetMapping("/save")
-    public String save(@ModelAttribute User user, HttpServletRequest request){
+    public void save(@ModelAttribute User user, HttpServletRequest request, HttpServletResponse response) throws IOException {
         userService.save(user);
         request.setAttribute("users", userService.findAllUsers());
         request.setAttribute("mode", "USER_VIEW");
-        return "index";
+        response.sendRedirect("/");
+    }
+
+    @GetMapping("/newUser")
+    public String createUser(HttpServletRequest request){
+        request.setAttribute("user", new User());
+        return "edit";
     }
 }

@@ -32,12 +32,11 @@
         <input type="text" class="form-control" value="${user.email}" name="email" id="email">
     </div>
     <div class="form-group">
-        <label for="birthYear">Birth Year</label>
+        <label for="birth_year">Birth Year</label>
         <input type="text" class="form-control" value="${user.birth_year}" name="birth_year" id="birth_year">
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
-</div>
 
 </body>
 </html>
