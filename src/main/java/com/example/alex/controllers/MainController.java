@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
+//програмный модуль, который слушает запрос по пути указанному в GetMapping
 public class MainController {
 
     @Autowired
@@ -45,7 +46,7 @@ public class MainController {
     }
 
     @GetMapping("/deleteUser")
-    public void deleteUser(@RequestParam long id, HttpServletRequest request, HttpServletResponse response) throws IOException{
+    public void deleteUser(@RequestParam long id, HttpServletResponse response) throws IOException{
         userService.delete(id);
         response.sendRedirect("/");
     }

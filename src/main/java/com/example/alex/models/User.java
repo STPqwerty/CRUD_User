@@ -4,12 +4,12 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 
-@Entity
+@Entity//эта аннотация говорит сделать Хибернейту таблицу из этого класса
 @Table(name="user")
 public class User implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id//идентификатор по ид
+    @GeneratedValue(strategy = GenerationType.AUTO)//указываем в каком виде и порядке идентификатор будет генерироваться
     private long id;
 
     @Column(name = "firstName", nullable = false)
@@ -26,20 +26,6 @@ public class User implements Serializable {
 
     @Column(name = "email")
     private String email;
-
-    public int getAddressId() {
-        return addressId;
-    }
-
-    public void setAddressId(int addressId) {
-        this.addressId = addressId;
-    }
-
-    //    @OneToOne(optional = false)
-//    @JoinColumn(name = "addressId")
-    @Column(name = "addressId")
-    private int addressId;
-//    private Adress adress;
 
     @Column(name = "birthYear")
     private String birthYear;

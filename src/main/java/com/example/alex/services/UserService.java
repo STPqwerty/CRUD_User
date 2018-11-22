@@ -34,7 +34,7 @@ public class UserService {
         return userRepo.findById(id);
     }
 
-
+//сохраняет пользователя
     public void save(User user){
         userRepo.save(user);
     }
