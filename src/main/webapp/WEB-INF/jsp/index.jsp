@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Users</title>
+    <title>Пользователи</title>
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,8 +17,8 @@
             <a class="navbar-brand" href="#">Users.com</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">All Users</a></li>
-            <li><a href="newUser">New user</a></li>
+            <li class="active"><a href="#">Все пользователи</a></li>
+            <li><a href="newUser">Добавить пользователя</a></li>
         </ul>
     </div>
 </nav>
@@ -29,26 +29,28 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Middle Name</th>
-                        <th>Phone</th>
+                        <th></th>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Отчество</th>
+                        <th>Телефон</th>
+                        <th>Адрес</th>
                         <th>Email</th>
-                        <th>Birth Year</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th>Год рождения</th>
+                        <th>Править</th>
+                        <th>Удалить</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    <c:forEach var="user" items="${users}"  >
+                    <c:forEach var="user" items="${users}">
                         <tr>
                             <td>${user.id}</td>
                             <td>${user.firstName}</td>
                             <td>${user.lastName}</td>
                             <td>${user.middleName}</td>
                             <td>${user.phone}</td>
+                            <td>${user.address.region}, город:${user.address.city},  ул.:${user.address.street}, дом:${user.address.houseNum},  кв.:${user.address.apartment}</td>
                             <td>${user.email}</td>
                             <td>${user.birthYear}</td>
                             <td><a href="updateUser?id=${user.id}"><div class="glyphicon glyphicon-pencil"></div></a> </td>

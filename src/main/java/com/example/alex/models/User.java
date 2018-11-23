@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     @Id//идентификатор по ид
-    @GeneratedValue(strategy = GenerationType.AUTO)//указываем в каком виде и порядке идентификатор будет генерироваться
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "first_name", nullable = false)
@@ -33,6 +33,9 @@ public class User implements Serializable {
 
     @Column(name = "birth_year")
     private String birthYear;
+
+    public User() {
+    }
 
     public long getId() {
         return id;
