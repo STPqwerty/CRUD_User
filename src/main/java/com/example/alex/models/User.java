@@ -12,22 +12,26 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)//указываем в каком виде и порядке идентификатор будет генерироваться
     private long id;
 
-    @Column(name = "firstName", nullable = false)
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "lastName", nullable = false)
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "middleName", nullable = false)
+    @Column(name = "middle_name", nullable = false)
     private String middleName;
 
     @Column(name = "phone_num")
     private String phone;
 
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "address_id")
+    private Address address;
+
     @Column(name = "email")
     private String email;
 
-    @Column(name = "birthYear")
+    @Column(name = "birth_year")
     private String birthYear;
 
     public long getId() {
@@ -84,5 +88,13 @@ public class User implements Serializable {
 
     public void setBirthYear(String birthYear) {
         this.birthYear = birthYear;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
