@@ -31,7 +31,10 @@ public class MainController {
 
     @GetMapping("/updateUser")
     public String init(@RequestParam long id, HttpServletRequest request){
-        request.setAttribute("user", userService.findOne(id));
+        User user = userService.findOne(id);
+
+        request.setAttribute("user", user);
+        request.setAttribute("address", user.getAddress());
         return "edit";
     }
 
@@ -47,8 +50,11 @@ public class MainController {
 
     @GetMapping("/newUser")
     public String createUser(HttpServletRequest request){
-        request.setAttribute("user", new User());
-        request.setAttribute("address", new Address());
+        User user = new User();
+        user.setAddress(new Address());
+
+        request.setAttribute("user", user);
+        request.setAttribute("address", user.getAddress());
         return "edit";
     }
 
