@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
--- Host: localhost    Database: user
+-- Host: localhost    Database: user_address
 -- ------------------------------------------------------
 -- Server version	8.0.13
 
@@ -24,15 +24,17 @@ DROP TABLE IF EXISTS `user`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `lastName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `middleName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `phone_num` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `email` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `addressId` int(11) DEFAULT NULL,
-  `birthYear` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+  `first_name` varchar(45) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `middle_name` varchar(45) NOT NULL,
+  `phone_num` varchar(45) DEFAULT NULL,
+  `address_id` int(11) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `birth_year` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `address_idx` (`address_id`),
+  CONSTRAINT `address` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +43,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Alex','KO','KOQ','8765432189','akuzin20@gmail.com1',0,'1234'),(4,'aasd','asd','asd','8765432189','qweertt@qwe',0,'1234'),(6,'Алексей','Алексеев','В','0987987123','sdfsdf@lsdkjfjd.com',0,'765673'),(7,'Петр','Иванов','ЕВ','5445645654','dsgdfg@lkdjg.com',0,'19287'),(8,'Alejandro','deCaprio','O','3463464564','dfljghd@lkfjgk.com',0,'8723');
+INSERT INTO `user` VALUES (10,'Алехандро','диКаприо','Aser','8765432189',11,'aleksandrstp1@gmail.com','1345'),(11,'Лю','Канг','Шаоканович','12345677',12,'aleksandrstp1@gmail.com','2345'),(12,'Джонни','Кейдж','Aser','8765432189',13,'aleksandrstp1@gmail.com','13451'),(13,'delle','Hellof','Aser1','(978) 079-92-04',14,'aleksandrstp1@gmail.com','1345');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-22  0:28:17
+-- Dump completed on 2018-11-24 15:57:48
